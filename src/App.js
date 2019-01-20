@@ -8,7 +8,7 @@ class App extends Component {
     }
   
     componentDidMount() {
-        console.log('COMPONENT DID MOUNT METHOD');
+        console.log('COMPONENT DID MOUNT');
         this.getGeoLocation();
     }
 
