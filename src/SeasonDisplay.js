@@ -22,12 +22,12 @@ const getSeason = (lat, month) => {
 export default (props) => {
     const season = getSeason(props.lat, new Date().getMonth());
     const { text, iconName } = seasonConfig[season];
-    console.log(seasonConfig[season])
-
+    console.log('ICON NAME:', iconName)
     return (
         <div>
             <i className={`${iconName} icon`} ></i>
-            <h1>{ season === 'winter' ? 'Burrr, It is chilly' : 'Lets hit the beach' }</h1>
+            {/* <h1>{ season === 'winter' ? 'Burrr, It is chilly' : 'Lets hit the beach' }</h1> */}
+            <h1>{text}</h1>
             <i className={`${iconName} icon`} ></i>
         </div>
     )
