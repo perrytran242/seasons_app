@@ -2,6 +2,7 @@ import React from 'react';
 
 import './SeasonDisplay.css';
 
+// config objects that displays the summer or winter properties based on  user location and time of year
 const seasonConfig = {
     summer: {
         text: 'Lets hit the beach!',
@@ -12,7 +13,7 @@ const seasonConfig = {
         iconName: 'snowflake'
     },
 }
-
+// helper function
 const getSeason = (lat, month) => {
     if ( month > 2 && month < 9) {
         return lat > 0 ? 'summer' : 'winter';
