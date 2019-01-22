@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SeasonDisplay from './SeasonDisplay';
 import Loader from './Loader';
 
+import './App.css';
+
 class App extends Component {
     state = {
         latitude: null,
@@ -23,15 +25,23 @@ class App extends Component {
         (err) => this.setState({errorMessage: err.message})
       );
     }
-    // react says we have to define the render method!!
-    render() {
+    renderContent() {
         if ( this.state.errorMessage && !this.state.latitude) {
             return <div>Error: {this.state.errorMessage}</div>
         }
         if ( !this.state.errorMessage && this.state.latitude) {
             return <SeasonDisplay lat = { this.state.latitude } />
         }
-        return <Loader/>;
+        return <Loader loadingMessage = "Please accept user location." />
+    }
+
+    // react says we have to define the render method!!
+    render() {
+        return (
+            <div className="red-border">
+                { this.renderContent() }
+            </div>
+        )
     }
 }
 

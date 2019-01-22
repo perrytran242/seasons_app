@@ -1,12 +1,22 @@
 import React from 'react';
+
 import './loader.css';
 
-export default () => {
+const Loader = (props) => {
+
     return (
-        <div class="loader-container ui segment">
-            <div class="ui active dimmer">
-                <div class="ui text loader">Loading</div>
+        <div className="loader-container ui segment">
+            <div className="ui active dimmer">
+                <div className="ui text loader">
+                    { props.loadingMessage } 
+                </div>
             </div>
         </div>
     )
 }
+
+Loader.defaultProps = {
+    loadingMessage: 'Loading....'
+}
+
+export default Loader;
