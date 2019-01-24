@@ -13,7 +13,7 @@ const seasonConfig = {
         iconName: 'snowflake'
     },
 }
-// helper function
+// helper function - logic that finds the season it is based on user location
 const getSeason = (lat, month) => {
     if ( month > 2 && month < 9) {
         return lat > 0 ? 'summer' : 'winter';
